@@ -1,0 +1,51 @@
+
+<section class='tabs-container' ng-if ="ctrl.session">
+
+    <div class="tab-group">
+        <div class="tab-item" ng-click="ctrl.selectedTab = 'headers'" ng-class="{'active': ctrl.selectedTab == 'headers'}">
+            Headers
+        </div>
+        <div class="tab-item" ng-click="ctrl.selectedTab = 'bodies'" ng-class="{'active': ctrl.selectedTab == 'bodies'}">
+            Body
+        </div>
+        <!--<div class="tab-item" ng-click="ctrl.selectedTab = 'more'" ng-class="{'active': ctrl.selectedTab == 'more'}">-->
+            <!--More later-->
+        <!--</div>-->
+
+    </div>
+
+    <div class="tab-content-wrapper">
+        <div class="tab-content headers" ng-show="ctrl.selectedTab == 'headers'">
+            <div class="header request">
+                <header class="toolbar toolbar-header"><h1 class="title">Request</h1></header>
+                <table class="table-striped">
+                    <tr>
+                        <th>Header</th>
+                        <th>Value</th>
+                    </tr>
+                    <tr ng-repeat="(header, value) in ctrl.session.request.headers">
+                        <td>{{header}}</td>
+                        <td>{{value}}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="header response">
+                <header class="toolbar toolbar-header"><h1 class="title">Response</h1></header>
+                <table class="table-striped">
+                    <tr>
+                        <th>Header</th>
+                        <th>Value</th>
+                    </tr>
+                    <tr ng-repeat="(header, value) in ctrl.session.response._headers">
+                        <td>{{header}}</td>
+                        <td>{{value}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="tab-content bodies" ng-show="ctrl.selectedTab == 'bodies'" >
+            <response-body-viewer session="ctrl.session"></response-body-viewer>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,40 @@
+<header class="toolbar toolbar-header">
+    <span class="content-type">
+        {{ctrl.contentType}}
+    </span>
+
+    <span class="load-time">
+        <img src="assets/icons/vintage-hourglass.svg"> {{ctrl.session.totalTime}}ms
+    </span>
+    <div class="toolbar-actions">
+        <div class="btn-group">
+            <button class="btn btn-default" ng-class="{'active': ctrl.contentCategory =='code'}" ng-click="ctrl.contentCategory = 'code'">
+                <img src="assets/icons/code.svg" alt="code" ng-hide="ctrl.highlightInProgress">
+                <img src="assets/boxes-preloader.gif" ng-show="ctrl.highlightInProgress">
+            </button>
+            <button class="btn btn-default" ng-class="{'active': ctrl.contentCategory =='image'}" ng-click="ctrl.contentCategory = 'image'">
+                <img src="assets/icons/picture.svg" alt="image">
+            </button>
+            <button class="btn btn-default" ng-class="{'active': ctrl.contentCategory =='hex'}" ng-click="ctrl.contentCategory = 'hex'">
+                <img src="assets/icons/hexagon.svg" alt="hexadecimal">
+            </button>
+            <button class="btn btn-default" ng-class="{'active': ctrl.contentCategory =='raw'}" ng-click="ctrl.contentCategory = 'raw'">
+                <img src="assets/icons/sushi-and-chopsticks.svg" alt="raw">
+            </button>
+        </div>
+    </div>
+</header>
+
+<div class="body-content">
+    <div ng-if="ctrl.contentCategory =='code'" class="highlighted-code">
+        <pre ng-bind-html="ctrl.highlightedCode" ng-hide="ctrl.highlightInProgress"></pre>
+    </div>
+    <div ng-if="ctrl.contentCategory =='image'">
+        <img ng-src="data:{{ctrl.contentType}};base64,{{ctrl.getBodyAsBase64()}}">
+    </div>
+    <video ng-if="ctrl.contentCategory =='video'"></video>
+    <pre ng-if="ctrl.contentCategory == 'hex'">{{ctrl.getHexDump()}}</pre>
+    <pre ng-if="ctrl.contentCategory =='raw'" >
+        {{ctrl.decodedResponse}}
+</pre>
+</div>

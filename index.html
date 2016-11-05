@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>elechdeb</title>
+
+		<link rel="stylesheet" href="photon/css/photon.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css">
+		<link rel="stylesheet" href="comlpile-less://less/main.less">
+
+		<script src="node_modules/angular/angular.min.js"></script>
+		<script src="main.js"></script>
+
+	</head>
+	<body ng-app="elechdeb" ng-controller="MainController as mainCtrl">
+		<div class="window">
+			<div class="window-content">
+				<control-bar proxy-service="mainCtrl.proxyService" class="toolbar toolbar-header"></control-bar>
+				<session-list sessions="mainCtrl.allSessions" on-session-select="mainCtrl.setSelectedSession(session)"></session-list>
+				<extended-session-info session="mainCtrl.selectedSession"></extended-session-info>
+			</div>
+
+		</div>
+	</body>
+</html>

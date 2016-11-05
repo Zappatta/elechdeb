@@ -1,0 +1,18 @@
+<form>
+    <div class="form-group port">
+        <label>port</label>
+        <input type="number" class="form-control" ng-model="ctrl.port">
+    </div>
+</form>
+<span class="icon icon-record status-indicator" ng-class="{'on' : ctrl.proxyState == 'on', 'working': ctrl.proxyState  == 'working'} "></span>
+
+<div class="control-buttons">
+    <button class="btn btn-mini btn-positive"
+            ng-disabled="ctrl.proxyState != 'off'"
+            ng-class="{'disabled': ctrl.proxyState != 'off'}"
+            ng-click="ctrl.startProxy()">Start</button>
+    <button class="btn btn-mini btn-negative"
+            ng-disabled="ctrl.proxyState == 'off'"
+            ng-class="{'disabled': ctrl.proxyState == 'off'}"
+            ng-click="ctrl.stopProxy()">Stop</button>
+</div>

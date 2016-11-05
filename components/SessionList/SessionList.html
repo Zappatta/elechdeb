@@ -1,0 +1,21 @@
+<section class="sessions-list table-striped" >
+    <header class="toolbar toolbar-header">
+        <h1 class="title">Sessions</h1>
+    </header>
+    <table>
+        <tr>
+            <th>index</th>
+            <th>url</th>
+            <th>status</th>
+            <th>time</th>
+            <th>content type</th>
+        </tr>
+        <tr ng-repeat="session in ctrl.sessions" ng-click="selectSession(session.id)" ng-class="{'selected' : ctrl.activeSessionId == session.id, 'loading': session.loadState == 'loading'}">
+            <td>{{session.id}}</td>
+            <td>{{session.request.url}}</td>
+            <td>{{session.response.statusCode}}</td>
+            <td>{{session.totalTime}}</td>
+            <td>{{session.response._headers['content-type']}}</td>
+        </tr>
+    </table>
+</section>

@@ -23,7 +23,7 @@ $ npm install
 ### Run
 
 ```
-$ npm start
+$ npm startzapp
 ```
 
 ### Build
@@ -41,8 +41,8 @@ MIT
 
 ## Acknowledgements:
 
-hexagon.svg icon by [Freepik](http://www.flaticon.com/authors/freepik) from www.flaticon.com
-picture.svg icon by [madebyoliver](http://www.flaticon.com/authors/madebyoliver) from www.flaticon.com
-code.svg icon by [Dave Gandy](http://www.flaticon.com/authors/dave-gandy) from www.flaticon.com
-sushi-and-chopsticks.svg icon by [Freepik](http://www.flaticon.com/authors/freepik) from www.flaticon.com
-vintage-hourglass.svg icon by [Freepik](http://www.flaticon.com/authors/freepik) from www.flaticon.com
+* hexagon.svg icon by [Freepik](http://www.flaticon.com/authors/freepik) from www.flaticon.com
+* picture.svg icon by [madebyoliver](http://www.flaticon.com/authors/madebyoliver) from www.flaticon.com
+* code.svg icon by [Dave Gandy](http://www.flaticon.com/authors/dave-gandy) from www.flaticon.com
+* sushi-and-chopsticks.svg icon by [Freepik](http://www.flaticon.com/authors/freepik) from www.flaticon.com
+* vintage-hourglass.svg icon by [Freepik](http://www.flaticon.com/authors/freepik) from www.flaticon.com

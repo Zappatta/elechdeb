@@ -23,7 +23,7 @@ $ npm install
 ### Run
 
 ```
-$ npm startzapp
+$ npm start
 ```
 
 ### Build
